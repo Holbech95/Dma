@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HearthStoneCard.cs" />
     <Compile Include="HearthStoneCards.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
