@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,8 +23,14 @@ namespace WindowsFormsApp
             InitializeComponent();
             client.AddDefaultHeader("X-Mashape-Key", APIKey);
 
-            GetAllCards();
-            GetSetCards();
+            List<string> set = new List<string>();
+            set.Add("Basic");
+            set.Add("Classic");
+            set.Add("Naxxramas");
+            set.Add("GoblinsVsGnomes");
+            set.Add("BlackrockMountain");
+
+            listCardSet.Items.AddRange(set.ToArray());
         }
 
         private void GetAllCards()
@@ -32,17 +39,17 @@ namespace WindowsFormsApp
             IRestResponse<HearthStoneCards> response = client.Execute<HearthStoneCards>(request);
         }
 
-        private void GetSetCards()
+        private void GetSetCards(string set)
         {
             RestRequest request = new RestRequest("cards/sets/{set}");
-            request.AddUrlSegment("set","Basic");
+            request.AddUrlSegment("set",set);
             IRestResponse<List<HearthStoneCard>> response = client.Execute<List<HearthStoneCard>>(request);
-            listCardSet.Items.AddRange(response.Data.ToArray());
+            listCards.Items.AddRange(response.Data.ToArray());
         }
 
         private void listCardSet_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            GetSetCards(listCardSet.SelectedItem as string);
         }
     }
 }
