@@ -11,7 +11,13 @@ namespace Models
         
         public List<HearthStoneCard> Basic { get; set; }
 
+        public List<HearthStoneCard> Classic { get; set; }
 
-        
+        public List<HearthStoneCard> Naxxramas { get; set; }
+
+        public List<HearthStoneCard> GoblinsVsGnomes { get; set; }
+
+        public List<HearthStoneCard> BlackrockMountain { get; set; }
+
     }
 }

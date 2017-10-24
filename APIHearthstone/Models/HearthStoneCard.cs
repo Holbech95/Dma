@@ -24,7 +24,7 @@
 
         public bool Collectible { get; set; }
 
-        public bool elite { get; set; }
+        public bool Elite { get; set; }
 
         public string Race { get; set; }
 
