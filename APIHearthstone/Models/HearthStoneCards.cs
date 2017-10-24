@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp
+namespace Models
 {
-    class HearthstoneAllCards
+    public class HearthStoneCards
     {
         public int Attack { get; set; }
 
