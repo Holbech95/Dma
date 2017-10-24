@@ -32,7 +32,7 @@
 
         public override string ToString()
         {
-            return "Card ID: " + CardId + ". Name: " + Name + "";
+            return "Card ID: " + CardId + ". Name: " + Name;
         }
     }
     

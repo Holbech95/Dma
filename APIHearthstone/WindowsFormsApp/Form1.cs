@@ -35,8 +35,9 @@ namespace WindowsFormsApp
         private void GetSetCards()
         {
             RestRequest request = new RestRequest("cards/sets/{set}");
-            IRestResponse<HearthStoneCards> response = client.Execute<HearthStoneCards>(request);
-            listCardSet.Items.AddRange(response.Data.Basic.ToArray());
+            request.AddUrlSegment("set","Basic");
+            IRestResponse<List<HearthStoneCard>> response = client.Execute<List<HearthStoneCard>>(request);
+            listCardSet.Items.AddRange(response.Data.ToArray());
         }
 
         private void listCardSet_SelectedIndexChanged(object sender, EventArgs e)
