@@ -29,5 +29,11 @@
         public string Race { get; set; }
 
         public string Locale { get; set; }
+
+        public override string ToString()
+        {
+            return "Card ID: " + CardId + ". Name: " + Name + "";
+        }
     }
+    
 }
